@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Priority Sorter project, a robust application designed to efficiently manage elements with varying priorities. Developed using SwiftUI, this project allows users to generate, view, and sort elements based on their priorities using different sorting algorithms. Let's explore the structure, features, and insights gained from this project.
+Welcome to the Priority Sorter project, an application designed to efficiently manage elements with varying priorities. Developed using SwiftUI, this project allows users to generate, view, and sort elements based on their priorities using different sorting algorithms. Let's explore the structure, features, and insights gained from this project.
 
 ## Code Structure
 
