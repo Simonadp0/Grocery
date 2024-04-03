@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Element Priority Manager project, a robust application designed to efficiently manage elements with varying priorities. Developed using SwiftUI, this project allows users to generate, view, and sort elements based on their priorities using different sorting algorithms. Let's explore the structure, features, and insights gained from this project.
+Welcome to the Priority Sorter project, a robust application designed to efficiently manage elements with varying priorities. Developed using SwiftUI, this project allows users to generate, view, and sort elements based on their priorities using different sorting algorithms. Let's explore the structure, features, and insights gained from this project.
 
 ## Code Structure
 
@@ -143,7 +143,7 @@ Through this project, several key insights and learnings were gained:
 
 ## Future Enhancements
 
-Looking ahead, potential enhancements to the Element Priority Manager include:
+Looking ahead, potential enhancements to the Priority Sorter include:
 
 - **User Authentication**: Implementing user authentication for secure access to expense management features.
 - **Data Persistence**: Adding data persistence to retain expense information across sessions.
@@ -151,4 +151,4 @@ Looking ahead, potential enhancements to the Element Priority Manager include:
 
 ## Conclusion
 
-The Element Priority Manager represents a significant milestone in the journey of developing efficient and user-centric applications. Through its implementation, valuable insights were gained into SwiftUI development, algorithm implementation, and performance optimization techniques. 
+The Priority Sorter represents a significant milestone in the journey of developing efficient and user-centric applications. Through its implementation, valuable insights were gained into SwiftUI development, algorithm implementation, and performance optimization techniques. 
