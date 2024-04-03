@@ -1,46 +1,47 @@
-# Priority Sorter
+# Element Priority Manager - Project Report
 
 ## Introduction
 
-This report provides a detailed overview of the code developed to manage a list of expenses, allowing users to generate, view, and sort expenses based on priority. The code is written in Swift using the SwiftUI framework for creating user interfaces.
+Welcome to the Element Priority Manager project, a robust application designed to efficiently manage elements with varying priorities. Developed using SwiftUI, this project allows users to generate, view, and sort elements based on their priorities using different sorting algorithms. Let's explore the structure, features, and insights gained from this project.
 
 ## Code Structure
 
-### 1. Struct Definitions
-#### ExpenseItem
-ExpenseItem is a struct that represents a single expense.
-Each ExpenseItem has a unique identifier generated using UUID, a name, and a priority.
+## Struct Definitions
 
-### 2. ContentView
-#### State Variables
-@State is used to manage state within ContentView.
-State variables include:
+- **ElementItem**: Represents a single element with a unique identifier, name, and priority.
 
-- expenses: an array of ExpenseItem containing the expenses.
-- Variables to store the execution times of various sorting algorithms.
-- showNanoseconds: a boolean variable to choose whether to display times in nanoseconds or seconds.
+## ContentView
 
-#### Body
-ContentView is a SwiftUI structure representing the main user interface of the application.
-It includes buttons to generate random expenses, view the list of expenses, and sort expenses.
-A switch to change the unit of measurement for execution times.
-Displays the execution times of various sorting algorithms.
+## State Variables
 
-#### Functions
-- generateRandomExpenses(): generates a specified number of random expenses with random names and priorities.
-- sortExpenses(): sorts expenses using different sorting algorithms and records execution times.
+The `ContentView` manages the state of the application, including:
+- `elements`: List of elements
+- `bubbleSortTime`, `quickSortTime`, `selectionSortTime`, `mergeSortTime`: Execution times of sorting algorithms
+- `selectedAlgorithm`: The selected sorting algorithm
+- `showNanoseconds`: Display preference for execution times
 
-### 3. Sorting Algorithms
+### Body
 
-Sorting algorithms are essential in the context of expense management as they allow organizing expenses to display the most important or relevant ones first. In the provided code, four different sorting algorithms are implemented: Bubble Sort, Quick Sort, Selection Sort, and Merge Sort.
+The `ContentView` defines the main user interface of the application, featuring:
+- Buttons to generate random elements, display the list of elements, and sort them
+- A picker to select the sorting algorithm
+- A toggle to switch between nanoseconds and seconds for execution times
+- Text views to display the execution times for each algorithm
+
+### Functions
+
+The `ContentView` includes functions to generate random elements and sort them using different sorting algorithms.
+
+## Sorting Algorithms
+
+Four sorting algorithms are implemented to facilitate sorting of elements based on priority:
 
 ### Bubble Sort
 
-Bubble Sort is one of the simplest sorting algorithms. It works by repeatedly comparing adjacent elements and swapping them if they are in the wrong order. This process is repeated until the entire array is sorted. While simple to implement, Bubble Sort has a time complexity of O(n^2), making it ineffective on large arrays. It is considered one of the slowest sorting algorithms but is useful for educational purposes or sorting small data sets.
+A simple sorting algorithm that repeatedly compares adjacent elements and swaps them if they are in the wrong order.
 
 ```swift
-// Bubble Sort implementation
-private func bubbleSort(_ array: inout [ExpenseItem]) {
+private func bubbleSort(_ array: inout [ElementItem]) {
     for i in 0..<array.count {
         for j in 0..<(array.count - i - 1) {
             if array[j].priority > array[j+1].priority {
@@ -48,4 +49,106 @@ private func bubbleSort(_ array: inout [ExpenseItem]) {
             }
         }
     }
+}
+```
 
+### Quick Sort
+
+An efficient "divide and conquer" algorithm that recursively divides the array, sorts the subarrays, and combines them.
+
+```swift
+private func quickSort(_ array: inout [ElementItem], low: Int, high: Int) {
+    if low < high {
+        let pi = partition(&array, low: low, high: high)
+        quickSort(&array, low: low, high: pi - 1)
+        quickSort(&array, low: pi + 1, high: high)
+    }
+}
+```
+
+### Selection Sort
+
+A straightforward algorithm that repeatedly selects the minimum element from the unsorted portion and moves it to the sorted portion.
+
+```swift
+private func selectionSort(_ array: inout [ElementItem]) {
+    for i in 0..<array.count {
+        var minIndex = i
+        for j in i+1..<array.count {
+            if array[j].priority < array[minIndex].priority {
+                minIndex = j
+            }
+        }
+        array.swapAt(i, minIndex)
+    }
+}
+```
+
+### Merge Sort
+
+A stable and efficient sorting algorithm that divides the array into smaller subarrays, sorts them, and merges them back together.
+
+```swift
+private func mergeSort(_ array: inout [ElementItem]) {
+    guard array.count > 1 else { return }
+    
+    let middleIndex = array.count / 2
+    var leftArray = Array(array[..<middleIndex])
+    var rightArray = Array(array[middleIndex...])
+    
+    mergeSort(&leftArray)
+    mergeSort(&rightArray)
+    
+    var leftIndex = 0
+    var rightIndex = 0
+    var index = 0
+    
+    while leftIndex < leftArray.count && rightIndex < rightArray.count {
+        if leftArray[leftIndex].priority < rightArray[rightIndex].priority {
+            array[index] = leftArray[leftIndex]
+            leftIndex += 1
+        } else {
+            array[index] = rightArray[rightIndex]
+            rightIndex += 1
+        }
+        index += 1
+    }
+    
+    while leftIndex < leftArray.count {
+        array[index] = leftArray[leftIndex]
+        leftIndex += 1
+        index += 1
+    }
+    
+    while rightIndex < rightArray.count {
+        array[index] = rightArray[rightIndex]
+        rightIndex += 1
+        index += 1
+    }
+}
+```
+## Key Features
+
+- **User Interaction**: Users can effortlessly generate random elements, view them in a list, and sort them based on priority.
+- **Sorting Algorithms**: The project demonstrates the implementation and application of various sorting algorithms to efficiently organize elements.
+- **Dynamic UI**: The user interface dynamically updates to reflect changes in element lists and sorting algorithm execution times.
+
+## Insights and Learnings
+
+Through this project, several key insights and learnings were gained:
+
+- **SwiftUI Development**: Enhanced proficiency in SwiftUI for building dynamic and interactive user interfaces.
+- **Algorithm Implementation**: Deepened understanding of sorting algorithms and their practical applications in real-world scenarios.
+- **Performance Optimization**: Explored techniques for optimizing performance and efficiency when working with large datasets.
+
+## Future Enhancements
+
+Looking ahead, potential enhancements to the Element Priority Manager include:
+
+- **User Authentication**: Implementing user authentication for secure access to expense management features.
+- **Data Persistence**: Adding data persistence to retain expense information across sessions.
+- **UI Refinement**: Further refining the user interface for improved usability and aesthetics.
+
+## Conclusion
+
+The Element Priority Manager represents a significant milestone in the journey of developing efficient and user-centric applications. Through its implementation, valuable insights were gained into SwiftUI development, algorithm implementation, and performance optimization techniques. 
