@@ -1,4 +1,4 @@
-# Element Priority Manager - Project Report
+# Priority Sorter - Project Report
 
 ## Introduction
 
