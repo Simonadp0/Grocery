@@ -39,7 +39,7 @@
 		F8A9C8422BB1DE8E000C7F6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8A9C8442BB1DE8F000C7F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A9C8472BB1DE8F000C7F6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F8A9C84D2BB1DE8F000C7F6B /* GroceryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroceryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8A9C84D2BB1DE8F000C7F6B /* SortSync.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortSync.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A9C8512BB1DE8F000C7F6B /* GroceryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryTests.swift; sourceTree = "<group>"; };
 		F8A9C8572BB1DE90000C7F6B /* GroceryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroceryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A9C85B2BB1DE90000C7F6B /* GroceryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryUITests.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F8A9C83D2BB1DE8E000C7F6B /* Grocery.app */,
-				F8A9C84D2BB1DE8F000C7F6B /* GroceryTests.xctest */,
+				F8A9C84D2BB1DE8F000C7F6B /* SortSync.xctest */,
 				F8A9C8572BB1DE90000C7F6B /* GroceryUITests.xctest */,
 			);
 			name = Products;
@@ -162,7 +162,7 @@
 			);
 			name = GroceryTests;
 			productName = GroceryTests;
-			productReference = F8A9C84D2BB1DE8F000C7F6B /* GroceryTests.xctest */;
+			productReference = F8A9C84D2BB1DE8F000C7F6B /* SortSync.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F8A9C8562BB1DE90000C7F6B /* GroceryUITests */ = {
@@ -435,7 +435,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = simona.Grocery;
+				PRODUCT_BUNDLE_IDENTIFIER = simona.Sortsync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = simona.Grocery;
+				PRODUCT_BUNDLE_IDENTIFIER = simona.Sortsync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -482,8 +482,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = simona.GroceryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = simona.SortSync;
+				PRODUCT_NAME = SortSync;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,8 +501,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = simona.GroceryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = simona.SortSync;
+				PRODUCT_NAME = SortSync;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
