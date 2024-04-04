@@ -1,4 +1,4 @@
-# SortSync - Project Report
+# SortSync 
 
 ## Introduction
 
