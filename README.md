@@ -8,7 +8,7 @@ Welcome to the Priority Sorter project, an application designed to efficiently m
 
 ## Struct Definitions
 
-- **ElementItem**: Represents a single element with a unique identifier, name, and priority.
+- **ElementItem**: Represents a single element with a unique identifier, name, priority, and category.
 
 ## ContentView
 
@@ -18,11 +18,13 @@ The `ContentView` manages the state of the application, including:
 - `elements`: List of elements
 - `bubbleSortTime`, `quickSortTime`, `selectionSortTime`, `mergeSortTime`: Execution times of sorting algorithms
 - `selectedAlgorithm`: The selected sorting algorithm
+- `selectedCategory`: The selected category for generating elements
 - `showNanoseconds`: Display preference for execution times
 
 ### Body
 
 The `ContentView` defines the main user interface of the application, featuring:
+- A segmented picker to select the category for element generation
 - Buttons to generate random elements, display the list of elements, and sort them
 - A picker to select the sorting algorithm
 - A toggle to switch between nanoseconds and seconds for execution times
@@ -30,7 +32,7 @@ The `ContentView` defines the main user interface of the application, featuring:
 
 ### Functions
 
-The `ContentView` includes functions to generate random elements and sort them using different sorting algorithms.
+The `ContentView` includes functions to generate random elements based on the selected category and sort them using different sorting algorithms.
 
 ## Sorting Algorithms
 
